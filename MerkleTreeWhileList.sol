@@ -4,11 +4,13 @@ pragma solidity ^0.8.4;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
+// openzeppelin 提供的校验工具
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 
 contract MerkleTreeWhiteList is ERC721, Ownable {
     using Counters for Counters.Counter;
-    // 链下通过 MerkleProof 生成的白名单
+
+    // 保存 MerkleProof 生成的白名单
     bytes32 public root;
 
     Counters.Counter private _tokenIdCounter;
@@ -18,8 +20,9 @@ contract MerkleTreeWhiteList is ERC721, Ownable {
         root = _root;
     }
     
-    // 校验方法
+    // 校验方法，传入两个数据，proof = 证明数据、lear = 地址
     function isValid(bytes32[] memory proof, bytes32 leaf) public view returns (bool) {
+        // 返回是否验证成功
         return MerkleProof.verify(proof, root, leaf);
     }
     

@@ -7,6 +7,7 @@ const addresses = ["0xeD2827f8f76892320e73f90e4D49Ebf8a0Af7c43","0x1071258E2C706
 
 // 通过hash生成叶子，返回二进制格式（buffer）
 const leaves = addresses.map(x => keccak256(x))
+console.log(leaves);
 
 // 输出16进制数据
 // console.log(leaves[0].toString('hex'))
@@ -22,9 +23,10 @@ const buf2hex = (x) =>{
 
 // 获取 root
 const root = buf2hex(tree.getRoot())
+// console.log(root);
 
 // 0x5b7879adb5297db6f1d7cfd57c317229c136825f2ea2575d976b472fff662f7b
-console.log(`root=\n${root}`);
+// console.log(`root=\n${root}`);
 
 // 0xeD2827f8f76892320e73f90e4D49Ebf8a0Af7c43
 let leaf = addresses[0]
@@ -32,7 +34,7 @@ let leaf = addresses[0]
 // buffer 转换成 16进制，在合约 isValid 验证白名单
 let inputRemixLeaf = buf2hex(keccak256(addresses[0]))
 // 0x1f2ad17a70338fba481e2da1976862f7f435fbd2636deab2265049161ac113e5
-console.log(`inputRemixLeaf=\n${inputRemixLeaf}`);
+// console.log(`inputRemixLeaf=\n${inputRemixLeaf}`);
 
 let proof = tree.getProof(keccak256(leaf))
 
@@ -42,4 +44,4 @@ let hexProof = proof.map(x =>{
 })
 
 // ["0xb7b19092bad498eae34230a9e14c8ce3d9d85b2bb91212108c9d47d1948acfeb","0x1f957db768cd7253fad82a8a30755840d536fb0ffca7c5c73fe9d815b1bc2f2f","0x924862b314bd38813a325167aca7caee16318f07303bd8e9f81bbe5808575fbf","0xe5076a139576746fd34a0fd9c21222dc274a909421fcbaa332a5af7272b6dcb1","0x148c730f8169681c1ebfb5626eb20af3d2351445463a1fdc5d0b116c62dc58c8","0x5712507eeb3d7b48e5876f21fc871656c2379464b480c8e89c50c2a1e8f58ac5"]
-console.log(`hexProof=\n${JSON.stringify(hexProof)}`);
+// console.log(`hexProof=\n${JSON.stringify(hexProof)}`);
