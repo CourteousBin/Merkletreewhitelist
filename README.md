@@ -12,7 +12,7 @@
 
 ## 项目运行
 
-```git clone https://github.com/BingoEdu/MerkleTreeWhiteList.git```
+```git clone https://github.com/CourteousBin/Merkletreewhitelist.git```
 
 ```npm install```
 
