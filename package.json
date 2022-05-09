@@ -1,0 +1,23 @@
+{
+  "name": "merkletreewhitelist",
+  "version": "1.0.0",
+  "description": "使用 MerkleTree 制作白名单",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CourteousBin/Merkletreewhitelist.git"
+  },
+  "keywords": [
+    "MerkleTree",
+    "WhiteList"
+  ],
+  "author": "CourteousBin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CourteousBin/Merkletreewhitelist/issues"
+  },
+  "homepage": "https://github.com/CourteousBin/Merkletreewhitelist#readme"
+}
